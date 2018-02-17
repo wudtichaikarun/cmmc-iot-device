@@ -4,6 +4,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     app: [
+      'react-hot-loader/patch',
       './index'
     ]
   },

@@ -4,7 +4,7 @@
   "description": "iot monitoring data",
   "main": "postcss.config.js",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "react-hot-loader": "^4.0.0-beta.22",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   },
