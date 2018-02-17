@@ -4,7 +4,7 @@
   "description": "iot monitoring data",
   "main": "postcss.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --env=dev"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -32,16 +32,21 @@
     "eslint-plugin-react": "^7.1.0",
     "node-sass": "^4.7.2",
     "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^11.1.0",
-    "postcss-loader": "^2.1.0",
-    "react-hot-loader": "^4.0.0-beta.22",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.10",
+    "react-hot-loader": "^4.0.0-beta.17",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.20.2",
-    "webpack": "^3.11.0",
+    "style-loader": "^0.19.1",
+    "webpack": "2.5.1",
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.3",
+    "redux-logger": "^3.0.6"
   }
 }

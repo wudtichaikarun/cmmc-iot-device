@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import RootContainer from './Root'
+import RootContainer from 'Features/ui/components/Root'
 
 const render = Component => {
   ReactDOM.render(
@@ -15,5 +15,5 @@ const render = Component => {
 render(RootContainer)
 
 if (module.hot) {
-  module.hot.accept('./Root', () => render(RootContainer))
+  module.hot.accept('Features/ui/components/Root', () => render(RootContainer))
 }

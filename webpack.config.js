@@ -5,10 +5,11 @@ const context = path.resolve(__dirname, 'src')
 
 module.exports = {
   devtool: 'eval-source-map',
+  context,
   entry: {
     app: [
       'react-hot-loader/patch',
-      path.resolve(context, './index')
+      './index'
     ]
   },
   output: {
@@ -20,14 +21,15 @@ module.exports = {
       Lib: path.resolve(context, 'lib'),
       Features: path.resolve(context, 'features'),
       Theme: path.resolve(context, 'theme')
-    }
+    },
+    extensions: [".js", ".json", ".scss"]
   },
   module: {
     rules: [
       // ESLINT
-      { test: /\.js$/, exclude: /node_modules/, enforce: 'pre', loader: 'eslint-loader'},
+      { test: /\.js$/, exclude: /node_modules/, enforce: 'pre', loader: 'eslint-loader' },
       // JS
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       // SCSS
       {
         test: /\.scss$/,
@@ -69,7 +71,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: 'public',
+    contentBase: path.join(__dirname, 'public'),
     hot: true,
     historyApiFallback: true,
     proxy: {

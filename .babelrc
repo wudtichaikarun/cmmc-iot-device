@@ -1,10 +1,10 @@
 {
   "presets": [
-    ["env" , {
-      "targets":{
+    ["env", {
+      "targets": {
         "browsers": ["last 2 versions"]
       },
-      "modults": false
+      "modules": false
     }],
     "react"
   ]
