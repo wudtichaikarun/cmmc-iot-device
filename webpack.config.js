@@ -23,6 +23,7 @@ module.exports = {
         /* working sequent right to left <------
         sass-loader: convert sass to css
         css-loader: css to js module and css hot loader
+        postcss-loader: autoprefix
         style-loader: map css to browser
         */
         use: [
@@ -35,6 +36,13 @@ module.exports = {
               localIdentName: '[path][name]__[local]--[hash:base64:5]'
             }
           },
+          // postcss-loader need config file name postcss.config.js
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
           {
             loader: 'sass-loader',
             options: {
@@ -43,6 +51,7 @@ module.exports = {
           } 
         ]
       }
+
     ]
   }
 }

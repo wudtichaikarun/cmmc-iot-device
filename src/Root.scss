@@ -1,3 +1,6 @@
 .text-color {
   color: green;
+  &:hover{
+    color: red;
+  }
 }
