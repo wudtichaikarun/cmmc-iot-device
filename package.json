@@ -1,0 +1,19 @@
+{
+  "name": "cmmc-iot-devices-ro",
+  "version": "1.0.0",
+  "description": "iot monitoring data",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wudtichaikarun/cmmc-iot-device.git"
+  },
+  "keywords": [
+    "cmmc-iot-device"
+  ],
+  "author": "Romantic",
+  "license": "ISC",
+  "homepage": "https://github.com/wudtichaikarun/cmmc-iot-device#readme"
+}
