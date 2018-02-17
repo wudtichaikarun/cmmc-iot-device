@@ -1,7 +1,7 @@
 {
   "presets": [
     ["env" , {
-      "targets" {
+      "targets":{
         "browsers": ["last 2 versions"]
       },
       "modults": false

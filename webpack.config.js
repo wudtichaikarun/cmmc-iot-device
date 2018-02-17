@@ -1,15 +1,18 @@
-const patch = require('path')
+const path = require('path')
 
 module.exports = {
-  conntext: patch.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'src'),
   entry: {
     app: [
-      './index.js'
+      './index'
     ]
+  },
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].js'
   },
   module: {
     rules: [
-      // JS
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
     ]
   }
