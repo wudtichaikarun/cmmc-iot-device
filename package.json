@@ -4,7 +4,7 @@
   "description": "iot monitoring data",
   "main": "postcss.config.js",
   "scripts": {
-    "test": "dev"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   ],
   "author": "Romantic",
   "license": "ISC",
-  "homepage": "https://github.com/wudtichaikarun/cmmc-iot-device#readme"
+  "homepage": "https://github.com/wudtichaikarun/cmmc-iot-device#readme",
+  "devDependencies": {
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
 }
