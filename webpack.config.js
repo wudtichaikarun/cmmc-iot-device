@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -15,6 +16,8 @@ module.exports = {
   },
   module: {
     rules: [
+      // ESLINT
+      { test: /\.js$/, exclude: /node_modules/, enforce: 'pre', loader: 'eslint-loader'},
       // JS
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
       // SCSS
@@ -53,5 +56,17 @@ module.exports = {
       }
 
     ]
+  },
+  // Config Dev server
+  plugins:[
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    hot: true,
+    historyApiFallback: true,
+    proxy: {
+      "/api": "http://localhost:3000"
+    }
   }
 }
