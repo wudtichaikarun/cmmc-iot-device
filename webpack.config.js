@@ -1,18 +1,26 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const context = path.resolve(__dirname, 'src')
+
 module.exports = {
   devtool: 'eval-source-map',
-  context: path.resolve(__dirname, 'src'),
   entry: {
     app: [
       'react-hot-loader/patch',
-      './index'
+      path.resolve(context, './index')
     ]
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].js'
+  },
+  resolve: {
+    alias: {
+      Lib: path.resolve(context, 'lib'),
+      Features: path.resolve(context, 'features'),
+      Theme: path.resolve(context, 'theme')
+    }
   },
   module: {
     rules: [
@@ -57,12 +65,11 @@ module.exports = {
 
     ]
   },
-  // Config Dev server
-  plugins:[
+  plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: 'public',
     hot: true,
     historyApiFallback: true,
     proxy: {

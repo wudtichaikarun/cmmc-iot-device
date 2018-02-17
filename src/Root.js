@@ -1,6 +1,8 @@
 import React from 'react'
-import styles from './Root.scss'
+import App from './App'
 
-export default() => (
-  <div className={styles['text-color']}>Hello React Hot loade</div>
+export default () => (
+  <div>
+    <App />
+  </div>
 )

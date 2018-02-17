@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import RootContainer from './Root'
 
-
 const render = Component => {
   ReactDOM.render(
-   <AppContainer>
-    <Component />
-   </AppContainer>,
-   document.getElementById('root')
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
   )
 }
 
