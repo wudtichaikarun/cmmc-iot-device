@@ -15,7 +15,19 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+      // JS
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      // SCSS
+      {
+        test: /\.scss$/,
+        /* working sequent right to left <------
+        sass-loader: convert sass to css
+        css-loader: css to js module and css hot loader
+        style-loader: map css to browser
+        */
+        use: ['style-loader', 'css-loader', 'sass-loader' ]
+      }
+
     ]
   }
 }
