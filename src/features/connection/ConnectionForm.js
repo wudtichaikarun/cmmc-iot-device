@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import styles from './ConnectionForm.scss'
+import classNames from 'classnames/bind'
 
 const renderField = ({
   input,
@@ -8,16 +9,19 @@ const renderField = ({
   type
   // meta: { touched, error }
 }) => (
-  <div className='form-group'>
-    <label>{label}</label>
+  <div className={styles['form__group']}>
+    <label className={styles['form__label']}>{label}</label>
     {
-     <input {...input} type={type} placeholder={label} className='form-control' />
+     <input {...input} type={type} placeholder={label} className={styles['form__input']} required/>
     }
     {
       // touched && error <div className={styles.error}>{error}</div>
     }
   </div>
 )
+
+let cx = classNames.bind(styles)
+let btn_green = cx('btn', 'btn--green')
 
 const ConnectionForm = () => (
   <section className='col-12 col-md-3'>
@@ -59,7 +63,7 @@ const ConnectionForm = () => (
               label='Topic'/>
 
             <div>
-              <button className={styles.button} type='submit'>connect</button>
+              <button className={btn_green} type='submit'>connect</button>
             </div>
 
           </form>

@@ -1,16 +1,15 @@
+@import '~Theme/components/botton';
+@import '~Theme/components/form';
+
 .card-body {
   padding: 1rem;
+  background-image: linear-gradient(
+    105deg,
+    rgba($color-white, .9) 0%,
+    rgba($color-white, .9) 50%,
+    transparent 50%
+  );
+  box-shadow:  0 1.5rem 4rem rgba($color-black, .2);
 }
 
-.button {
-  text-align: center;
-  border-radius: 4px;
-  padding: .5rem;
-  color: white;
-  background-color: green;
-  border: 0;
-}
 
-.error {
-  color: red;
-}
