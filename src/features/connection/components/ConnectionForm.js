@@ -1,35 +1,35 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
-import styles from './ConnectionForm.scss'
-import classNames from 'classnames/bind'
+// import classNames from 'classnames/bind'
 
 const renderField = ({
   input,
   label,
-  type
+  type,
   // meta: { touched, error }
 }) => (
-  <div className={styles['form__group']}>
-    <label className={styles['form__label']}>{label}</label>
+  <div className='form__group'>
+    <label className='form__label'>{label}</label>
     {
-     <input {...input} type={type} placeholder={label} className={styles['form__input']} required/>
+     <input {...input} type={type} placeholder={label} className='form__input' required/>
     }
     {
-      // touched && error <div className={styles.error}>{error}</div>
+      // touched && error && <div className={styles.error}>{error}</div>
     }
   </div>
 )
 
-let cx = classNames.bind(styles)
-let btn_green = cx('btn', 'btn--green')
+// let cx = classNames.bind(styles)
+// let btn_green = cx('btn', 'btn--green')
 
-const ConnectionForm = () => (
+const ConnectionForm = ({header, handleSubmit}) => (
   <section className='col-12 col-md-3'>
     <div className='form-group'>
       <div className='card'>
-        <div className={styles['card-body']}>
+        <div className='card-body'>
           <form>
-            <h6 className='text-right'>Waiting for connection</h6>
+            <h3 className='text-right'>{header}</h3>
 
             <Field
               component={renderField}
@@ -63,7 +63,7 @@ const ConnectionForm = () => (
               label='Topic'/>
 
             <div>
-              <button className={btn_green} type='submit'>connect</button>
+              <button className='btn btn--green' type='submit' onClick={handleSubmit} >connect</button>
             </div>
 
           </form>
@@ -73,12 +73,17 @@ const ConnectionForm = () => (
   </section>
 )
 
-/*function validateForm(value) {
-  let errors = {}
+ConnectionForm.propTypes = {
+  header: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired
+}
 
-  if(!formValueSelector.host) errors.host = 'Required.'
+// function validateForm(values) {
+//   let errors = {}
 
-}*/
+//   if(!values.host) errors.host = 'Required.'
+
+// }
 
 export default reduxForm({
   form: 'connection',
