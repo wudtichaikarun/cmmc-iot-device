@@ -10,10 +10,10 @@ const renderField = ({
   // meta: { touched, error }
 }) => (
   <div className='form__group'>
-    <label className='form__label'>{label}</label>
     {
      <input {...input} type={type} placeholder={label} className='form__input' required/>
     }
+    <label className='form__label'>{label}</label>
     {
       // touched && error && <div className={styles.error}>{error}</div>
     }
@@ -29,7 +29,10 @@ const ConnectionForm = ({header, handleSubmit}) => (
       <div className='card'>
         <div className='card-body'>
           <form>
-            <h3 className='text-right'>{header}</h3>
+
+            <div className='u-margin-bottom-medium'>
+              <h2 className='heading-secondary'>{header}</h2>
+            </div>
 
             <Field
               component={renderField}

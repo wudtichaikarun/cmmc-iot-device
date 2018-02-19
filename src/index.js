@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import RootContainer from 'Features/ui/components/Root'
-import './index.scss'
+import 'Theme/main.scss'
 
 const render = Component => {
   ReactDOM.render(
