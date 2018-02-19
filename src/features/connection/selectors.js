@@ -1,1 +1,3 @@
-
+export function getMqttConfig(state) {
+  return state.mqttConfig.mqtt
+}
