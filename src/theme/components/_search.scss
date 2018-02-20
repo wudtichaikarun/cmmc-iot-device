@@ -1,13 +1,7 @@
 .search {
-  flex: 0 0 40%;
-
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  text-align: center;
 
   @include respond(phone) {
-      order: 1;
-      flex: 0 0 100%;
       background-color: $color-light-grey-1;
   }
 
@@ -18,13 +12,12 @@
     border: none;
     padding: .7rem 2rem;
     border-radius: 100px;
-    width: 90%;
+    width: 85%;
     transition: all .2s;
-    margin-right: -3.25rem;
 
     &:focus {
       outline: none;
-      width: 100%;
+      width: 95%;
       background-color: $color-light-grey-2;
     }
 

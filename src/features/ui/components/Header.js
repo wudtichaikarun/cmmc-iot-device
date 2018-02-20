@@ -18,19 +18,27 @@ const Header = ({location: { pathname }}) => (
               <button className='search__button'></button>
             </div>
 
-            <div>
+            <div className='filter-status'>
               <div className="form__radio-group">
-                <input type="radio" className="form__radio-input" id="small" name="size" />
-                <label htmlFor="small" className="form__radio-label">
-                  <span className="form__radio-btn"></span>
+                <input type="radio" className="form__radio-input" id="all" name="size" checked={true}/>
+                <label htmlFor="all" className="form__radio-label">
+                  <span className="form__radio-btn form__radio-btn--all"></span>
+                  All status
+                </label>
+              </div>
+
+              <div className="form__radio-group">
+                <input type="radio" className="form__radio-input" id="online" name="size" />
+                <label htmlFor="online" className="form__radio-label">
+                  <span className="form__radio-btn form__radio-btn--online"></span>
                   Online
                 </label>
               </div>
 
               <div className="form__radio-group">
-                <input type="radio" className="form__radio-input" id="large" name="size" />
-                <label htmlFor="large" className="form__radio-label">
-                  <span className="form__radio-btn"></span>
+                <input type="radio" className="form__radio-input" id="ofline" name="size" />
+                <label htmlFor="ofline" className="form__radio-label">
+                  <span className="form__radio-btn form__radio-btn--ofline"></span>
                   Offline
                 </label>
               </div>
