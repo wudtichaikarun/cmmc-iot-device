@@ -6,14 +6,14 @@
   justify-content: space-between;
   align-items: center;
 
-  // @media only screen and (max-width: $bp-small) {
-  //   margin-right: 0;
-  //   margin-bottom: 7px;
-  // }
+  @include respond(tab-port) {
+    margin-right: 0;
+    margin-bottom: 7px;
+  }
 
-  // @media only screen and (max-width: $bp-smallest) {
-  //   flex-wrap: wrap;
-  //   align-content: space-around;
-  //   height: 11rem;
-  // }
+  @include respond(phone) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+  }
 }

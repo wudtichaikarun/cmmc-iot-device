@@ -1,7 +1,9 @@
 import React from 'react'
-import logo from 'Theme/assets/cmmc-logo.png'
 import { withRouter } from 'react-router'
 import { compose } from 'recompose'
+import { Link } from 'react-router-dom'
+import logo from 'Theme/assets/cmmc-logo.png'
+import configIcon from 'Theme/assets/config.svg'
 
 const Header = ({location: { pathname }}) => (
   <div className='header-wrapper'>
@@ -12,7 +14,7 @@ const Header = ({location: { pathname }}) => (
             <img src={logo} alt="" className='logo'/>
 
             <div className='search'>
-              <input type='text' className='search__input' placeholder='search devices name'/>
+              <input type='text' className='search__input' placeholder='Filter devices by name...'/>
               <button className='search__button'></button>
             </div>
 
@@ -34,8 +36,15 @@ const Header = ({location: { pathname }}) => (
               </div>
         
             </div>
+            
+            <div className='config-wrapper'>
+              <Link to='/connect' >
+                <div className='icon-nav' dangerouslySetInnerHTML={{ __html: configIcon }}></div>
+              </Link>
 
-            <button className='btn btn--orange' type='submit' >disconnect</button>
+              <button className='btn btn--orange' type='submit' >disconnect</button>
+            </div>
+
           </div>
        )
        : (

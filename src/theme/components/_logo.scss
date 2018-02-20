@@ -2,3 +2,21 @@
   height: 5rem;
   margin: auto 0;
 }
+
+.icon-nav {
+  width: 3rem;
+  margin-right: 1.2rem;
+  svg {
+    fill:$color-dark-grey-2;
+  }
+
+  &:hover {
+    svg {
+      fill:$color-dark-grey;
+    } 
+  }
+}
+
+.config-wrapper {
+  display: flex;
+}

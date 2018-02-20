@@ -31,7 +31,16 @@ module.exports = {
       // JS
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       // IMAGE
-      { test: /\.(png|jpg|gif)$/, exclude: /node_modules/, loader: 'file-loader'},
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: 'svg-inline-loader'
+      },
+      { 
+        test: /\.(png|jpg|gif)$/, 
+        exclude: /node_modules/, 
+        loader: 'file-loader'
+      },
       // SCSS
       {
         test: /\.scss$/,

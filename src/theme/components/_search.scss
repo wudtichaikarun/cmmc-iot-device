@@ -5,11 +5,11 @@
   justify-content: center;
   align-content: center;
 
-  // @media only screen and (max-width: $bp-smallest) {
-  //     order: 1;
-  //     flex: 0 0 100%;
-  //     background-color: var(--color-grey-light-2);
-  // }
+  @include respond(phone) {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: $color-light-grey-1;
+  }
 
   &__input {
     font-family: inherit;
