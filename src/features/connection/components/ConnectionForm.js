@@ -10,13 +10,11 @@ const renderField = ({
   // meta: { touched, error }
 }) => (
   <div className='form__group'>
-    {
-     <input {...input} type={type} placeholder={label} className='form__input' required/>
-    }
+    { <input {...input} type={type} placeholder={label} className='form__input' required/> }
+    
     <label className='form__label'>{label}</label>
-    {
-      // touched && error && <div className={styles.error}>{error}</div>
-    }
+
+    {/* { touched && error && <div className={styles.error}>{error}</div> } */}
   </div>
 )
 
