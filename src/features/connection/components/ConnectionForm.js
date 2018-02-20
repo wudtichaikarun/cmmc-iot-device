@@ -24,13 +24,13 @@ const renderField = ({
 // let btn_green = cx('btn', 'btn--green')
 
 const ConnectionForm = ({header, handleSubmit}) => (
-  <section className='col-12 col-md-3'>
+  <section className='section-connectionForm'>
     <div className='form-group'>
       <div className='card'>
         <div className='card-body'>
           <form>
 
-            <div className='u-margin-bottom-medium'>
+            <div className='u-margin-bottom-small'>
               <h2 className='heading-secondary'>{header}</h2>
             </div>
 
@@ -65,7 +65,7 @@ const ConnectionForm = ({header, handleSubmit}) => (
               name='topic'
               label='Topic'/>
 
-            <div>
+            <div className='form__group u-align-text_align-right'>
               <button className='btn btn--green' type='submit' onClick={handleSubmit} >connect</button>
             </div>
 

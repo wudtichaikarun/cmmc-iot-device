@@ -29,7 +29,7 @@ export default compose(
       createConection(value) {
         dispatch(createConection(value))
         // MQTT_Connect(this.state.mqtt) ???
-        // props.history.push('./contents')
+        props.history.push('./contents')
       }
     })
   )

@@ -4,7 +4,7 @@
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
+    padding: .7rem 2rem;
     display: inline-block;
     border-radius: 10rem;
     /* shot hand animation */
@@ -51,6 +51,15 @@
     }
   }
 
+  &--orange {
+    background-color: $color-secondary-dark;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
   &::after {
     content: "";
     display: inline-block;
@@ -73,3 +82,27 @@
   }  
 }
 
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition:  all .2s;
+  }
+
+  &:hover {
+   background-color: $color-primary;
+   color: $color-white;
+   box-shadow: 0 1rem 2rem rgba($color-black, .15);
+   transform: translateY(-2px)
+  }
+
+  &:active {
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(0)
+  }
+}

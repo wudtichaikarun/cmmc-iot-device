@@ -30,6 +30,8 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, enforce: 'pre', loader: 'eslint-loader' },
       // JS
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      // IMAGE
+      { test: /\.(png|jpg|gif)$/, exclude: /node_modules/, loader: 'file-loader'},
       // SCSS
       {
         test: /\.scss$/,
