@@ -2,9 +2,10 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import { compose } from 'recompose'
-import ConnectionForm from './ConnectionForm'
 import { getMqttConfig } from '../selectors'
 import { createConection } from '../actions'
+import ConnectionForm from './ConnectionForm'
+// import { MQTT_Connect } from 'Lib'
 
 class CreateConnectionContainer extends PureComponent {
   render() {
@@ -26,9 +27,10 @@ export default compose(
     }) ,
     // map dispatch to props
     (dispatch, props) => ({
-      createConection(value) {
-        dispatch(createConection(value))
-        // MQTT_Connect(this.state.mqtt) ???
+      createConection(formValue) {
+        dispatch(createConection(formValue))
+        //let next = dispatch
+        //  MQTT_Connect(dispatch, formValue)
         props.history.push('./contents')
       }
     })

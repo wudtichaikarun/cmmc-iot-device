@@ -1,8 +1,19 @@
 import {
-  MQTT_CONFIG
+  MQTT_CONFIG,
+  MQTT_DISCONNECT
 } from '../../types'
 
 const initialState = {
+  devices: [],
+  arrayDevices: [],
+  filterDevices: [],
+  devicesOnline: [],
+  devicesOffline: [],
+  checkedOnline: false,
+  checkedOffline: false,
+  connection: false,
+  disconnect: false,
+  lwt: [],
   mqtt: {
     host: 'mqtt.cmmc.io',
     port: 9001,
@@ -10,14 +21,17 @@ const initialState = {
     username: '',
     password: '',
     topic: 'CMMC/#'
-  },
-  connection: false
+  }
 }
 
 export default (state = initialState, action) => {
   switch(action.type) {
     case MQTT_CONFIG:
       return action.configs
+
+    case MQTT_DISCONNECT:
+      return state.connection = false 
+
     default:
       return state
   }
