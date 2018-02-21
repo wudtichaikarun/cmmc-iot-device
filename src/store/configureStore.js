@@ -1,6 +1,7 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose} from 'redux'
 import logger from 'redux-logger'
 import rootReducer from '../reducers'
+import DevTools from '../features/ui/components/DevTools'
 
 export default function() {
   const middlewares = [
@@ -9,7 +10,10 @@ export default function() {
 
   const store = createStore(
     rootReducer,
-    applyMiddleware(...middlewares)
+    compose(
+      applyMiddleware(...middlewares),
+      DevTools.instrument()
+    )
   )
 
   if (module.hot) {

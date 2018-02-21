@@ -5,7 +5,7 @@ import { compose } from 'recompose'
 import { getMqttConfig } from '../selectors'
 import { createConection } from '../actions'
 import ConnectionForm from './ConnectionForm'
-// import { MQTT_Connect } from 'Lib'
+import { MQTT_Connect } from 'Lib'
 
 class CreateConnectionContainer extends PureComponent {
   render() {
@@ -30,7 +30,7 @@ export default compose(
       createConection(formValue) {
         dispatch(createConection(formValue))
         //let next = dispatch
-        //  MQTT_Connect(dispatch, formValue)
+        MQTT_Connect(dispatch, formValue)
         props.history.push('./contents')
       }
     })
