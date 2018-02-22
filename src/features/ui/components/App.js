@@ -6,7 +6,7 @@ import Home from 'Features/ui/components/Home'
 import Content from 'Features/ui/components/Content'
 
 export default() => (
-  <div>
+  <div className='container'>
     <Header />
     <Switch>
       <Route exact path='/' component={Home} />

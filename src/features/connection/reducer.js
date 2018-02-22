@@ -30,7 +30,7 @@ export default (state = initialState, action) => {
       return action.configs
 
     case MQTT_DISCONNECT:
-      return state.connection = false 
+      return { connection: false } 
 
     default:
       return state

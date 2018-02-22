@@ -20,7 +20,8 @@ module.exports = {
     alias: {
       Lib: path.resolve(context, 'lib'),
       Features: path.resolve(context, 'features'),
-      Theme: path.resolve(context, 'theme')
+      Theme: path.resolve(context, 'theme'),
+      Store: path.resolve(context, 'store')
     },
     extensions: [".js", ".json", ".scss"]
   },

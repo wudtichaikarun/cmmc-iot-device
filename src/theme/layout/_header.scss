@@ -1,11 +1,21 @@
+.header-wrapper {
+  background-color: red;
+
+}
+
 .header {
   font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
-  align-items: center;
-  
+  grid-column: full-start / full-end;
+
+  &-item {
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    align-items: center;
+  }
+
   @include respond(tab-port) {
     margin-right: 0;
     margin-bottom: 7px;
@@ -15,14 +25,6 @@
     align-content: space-around;
     height: 11rem;
   }
-}
-
-.filter-status {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin: 0;
-  // padding: 0 4rem 0 4rem;
 }
 
 .config-wrapper {

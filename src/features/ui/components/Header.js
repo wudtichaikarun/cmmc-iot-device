@@ -1,12 +1,14 @@
 import React from 'react'
 import { withRouter } from 'react-router'
-import { compose } from 'recompose'
+import { compose, withHandlers } from 'recompose'
 import { Link } from 'react-router-dom'
 import logo from 'Theme/assets/cmmc-logo.png'
 import configIcon from 'Theme/assets/config.svg'
+import { MQTT_Disconnect } from 'Lib'
 
-const Header = () => (
-  <div className='header'>
+
+const Header = ({disconnect}) => (
+  <div className='header-item'>
     <img src={logo} alt="" className='logo'/>
 
     <div className='search'>
@@ -14,7 +16,7 @@ const Header = () => (
       <button className='search__button'></button>
     </div>
 
-    <div className='filter-status'>
+    <div className='radio'>
       <div className="form__radio-group">
         <input type="radio" className="form__radio-input" id="all" name="size"/>
         <label htmlFor="all" className="form__radio-label">
@@ -46,20 +48,25 @@ const Header = () => (
         <div className='icon-nav' dangerouslySetInnerHTML={{ __html: configIcon }}></div>
       </Link>
 
-      <button className='btn btn--orange' type='submit' >disconnect</button>
+      <button className='btn btn--orange' type='submit' onClick={disconnect} >disconnect</button>
     </div>
 
   </div>
 )
 
-const HeaderContainer = ({location: { pathname }}) => (
-  <div className='header-wrapper'>
+const HeaderContainer = ({ onDisconnect, location: { pathname } }) => (
+  <div className='header'>
       {
-        (pathname==='/contents') ? <Header /> : <img src={logo} alt="" className='logo'/>
+        (pathname==='/contents') ? <Header disconnect={onDisconnect} /> : <img src={logo} alt="" className='logo'/>
       }
   </div>
 )
 
 export default compose(
-  withRouter
+  withRouter,
+  withHandlers({
+    onDisconnect: (props) => _ => {
+      MQTT_Disconnect()
+    }
+  }) 
 )(HeaderContainer)

@@ -1,0 +1,17 @@
+.contents {
+  &-home {
+    grid-column: col-start 1 / col-end 2;
+  }
+
+  &-connection{
+    grid-column: col-start 3 / col-end 6; 
+
+    @include respond(tab-port) {
+      grid-column: col-start 2 / col-end 7;
+    }
+  
+    @include respond(phone) {
+      grid-column: col-start 1 / col-end 8;
+    }
+  }
+}

@@ -40,8 +40,21 @@ body {
   color: $color-dark-grey-3;
   
   @include respond(tab-port) {
-    padding: 0;
+    padding: 1rem 2rem !important;
   }
+
+  @include respond(phone) {
+    padding: .5rem .5rem !important;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 8vh 1fr;
+  grid-template-columns: [full-start] minmax(10rem, 1fr)
+                         [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+                         [center-end] minmax(10rem, 1fr)
+                         [full-end];
 }
 
 ::selection {

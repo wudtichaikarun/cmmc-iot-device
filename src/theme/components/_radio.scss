@@ -1,0 +1,5 @@
+.radio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, max-content));
+  margin: 0;
+}

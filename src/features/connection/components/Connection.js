@@ -1,36 +1,30 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
 import { compose } from 'recompose'
 import { getMqttConfig } from '../selectors'
 import { createConection } from '../actions'
 import ConnectionForm from './ConnectionForm'
 import { MQTT_Connect } from 'Lib'
 
-class CreateConnectionContainer extends PureComponent {
-  render() {
-    return (
-      <ConnectionForm 
-        header='Wating for connect...' 
-        initialValues={this.props.mqtt}
-        onSubmit={this.props.createConection} />
-    )
-  }
-}
+const CreateConnectionContainer = ({ mqtt, onConection }) => (
+  <ConnectionForm 
+    header='Wating for connect...' 
+    initialValues={mqtt}
+    onSubmit={onConection} />
+)
 
 export default compose(
-  withRouter,
   connect(
-    // map state to props
+    // map state to propcs
     state => ({
       mqtt: getMqttConfig(state)
     }) ,
     // map dispatch to props
     (dispatch, props) => ({
-      createConection(formValue) {
+      onConection(formValue) {
         dispatch(createConection(formValue))
         //let next = dispatch
-        MQTT_Connect(dispatch, formValue)
+        MQTT_Connect(formValue)
         props.history.push('./contents')
       }
     })

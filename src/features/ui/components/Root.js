@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { configureStore } from '../../../store'
+import { configureStore } from 'Store'
 import App from './App'
 import DevTools from 'Features/ui/components/DevTools'
 

@@ -22,7 +22,7 @@ const renderField = ({
 // let btn_green = cx('btn', 'btn--green')
 
 const ConnectionForm = ({header, handleSubmit}) => (
-  <section className='section-connectionForm'>
+  <section className='contents-connection section-connectionForm'>
     <div className='form-group'>
       <div className='card'>
         <div className='card-body'>
