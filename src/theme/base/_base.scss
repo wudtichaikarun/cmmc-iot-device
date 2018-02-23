@@ -56,10 +56,11 @@ body {
 
 .container {
   display: grid;
+  grid-row-gap: 1rem;
   grid-template-rows: min-content 1fr;
-  grid-template-columns: [full-start] minmax(10rem, 1fr)
+  grid-template-columns: [full-start] minmax(1rem, 10rem)
                          [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-                         [center-end] minmax(10rem, 1fr)
+                         [center-end] minmax(1rem, 10rem)
                          [full-end];
 }
 

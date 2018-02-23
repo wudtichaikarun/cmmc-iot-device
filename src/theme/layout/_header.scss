@@ -38,6 +38,11 @@
 
     &__radio {
       display: flex;
+      padding-right: 3rem;
+
+      @include respond(tab-port) {
+        padding-right: 1rem;
+      }
 
       @include respond(phone) {
         padding: .8rem 0 .8rem .8rem;

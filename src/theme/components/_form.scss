@@ -69,9 +69,10 @@
     margin-right: .5rem;
 
     @include respond(tab-port) {
+      margin-right: 0;
 
       &:not(:last-child) {
-        padding-right: 1rem;
+        padding-right: .5rem;
       }
     }
   }

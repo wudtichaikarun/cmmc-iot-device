@@ -56,7 +56,7 @@ const Header = ({disconnect}) => (
 const HeaderContainer = ({ onDisconnect, location: { pathname } }) => (
   <div className='header'>
       {
-        (pathname==='/contents') ? <Header disconnect={onDisconnect} /> : <img src={logo} alt="" className='header-item__logo'/>
+        (pathname==='/contents') ? <Header disconnect={onDisconnect} /> : <img src={logo} alt="" className='header-item__logo logo'/>
       }
   </div>
 )
