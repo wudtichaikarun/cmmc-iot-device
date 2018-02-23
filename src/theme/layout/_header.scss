@@ -10,10 +10,53 @@
   grid-column: full-start / full-end;
 
   &-item {
-    display: grid;
-    grid-template-rows: 50px;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
+    // display: grid;
+    // grid-template-rows: min-content;
+    // grid-template-columns: 1fr minmax(20rem, 2fr) repeat(2, 1fr);
+    // align-items: center;
+
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    // width size = 1
+    flex-grow: 1;
+
+    &__logo {
+      @include respond(phone) {
+        order: -2;
+      }
+
+    }
+
+    &__search {
+      // width size = 1 * 2
+      flex-grow: 2;
+      flex-shrink: 0;
+    }
+
+    &__radio {
+      display: flex;
+
+      @include respond(phone) {
+        padding: .8rem 0 .8rem .8rem;
+      }
+    }
+
+    &__setup {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: .5rem .7rem .5rem 0;
+
+      @include respond(phone) {
+        order: -1;
+      }
+
+    }
+
+
   }
 
   @include respond(tab-port) {
@@ -27,7 +70,3 @@
   }
 }
 
-.config-wrapper {
-  display: flex;
-  justify-content: flex-end;
-}

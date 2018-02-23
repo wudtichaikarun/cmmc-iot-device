@@ -1,0 +1,8 @@
+.logo {
+  height: 5rem;
+  margin: auto 0;
+
+  @include respond(tab-port) {
+    height: 4rem;
+  }
+}

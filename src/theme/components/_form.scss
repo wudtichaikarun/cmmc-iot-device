@@ -66,9 +66,9 @@
   }
 
   &__radio-group {
+    margin-right: .5rem;
 
     @include respond(tab-port) {
-      width: 100%;
 
       &:not(:last-child) {
         padding-right: 1rem;
