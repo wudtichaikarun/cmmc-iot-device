@@ -42,9 +42,7 @@ export default (state = initialState, action) => {
       break
     
     case MQTT_CONNECTION_SUCCESS:
-      state.connection = true
-      state.disconnect = 'connected'
-      break
+      return { ...state, disconnect: 'connected', connection: true }
 
     case MQTT_MESSAGE_ARRIVED:
       if (state.filterDevices.length === 0) {
