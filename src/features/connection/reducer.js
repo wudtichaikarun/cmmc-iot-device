@@ -39,7 +39,7 @@ export default (state = initialState, action) => {
 
     case MQTT_DISCONNECT:
       state.connection = false
-      break
+      return {...state, connection: false }
     
     case MQTT_CONNECTION_SUCCESS:
       return { ...state, disconnect: 'connected', connection: true }
@@ -51,28 +51,36 @@ export default (state = initialState, action) => {
         let devices = state.devices
         let actionData = action.data
 
-        if (state.lwt[`in-${info.d}`].status === 0) {
-          actionData.classCardHeader = 'bg-disconnected'
-        } else {
-          actionData.classCardHeader = 'bg-connected'
-        }
+        // if (state.lwt[`in-${info.d}`].status === 0) {
+        //   // actionData.classCardHeader = 'bg-disconnected'
+        //   var cardHeaderStatus = 'disconnected'
+        // } else {
+        //   // actionData.classCardHeader = 'bg-connected'
+        //   var cardHeaderStatus = 'connected'
+        // }
+
+        let arrayDevices = []
 
         devices[d.myName] = actionData
+
         Object.keys(devices).forEach( (key, idx) => {
-          state.arrayDevices[idx] = devices[key]
+          arrayDevices[idx] = devices[key]
         })
+        
+        return {...state, arrayDevices }
 
       } else {
         if (state.checkedOnline === true && state.checkedOffline === false) {
           let onlineOnly = []
           
           state.arrayDevices.forEach(device => {
-            if (device.classCardHeader === 'bg-connected') {
+            if (device.classCardHeader === 'connected') {
               onlineOnly.push(device)
             }
           })
 
-          state.arrayDevices = onlineOnly
+          // state.arrayDevices = onlineOnly
+          return {...state, arrayDevices: onlineOnly }
         }
         
         if (state.checkedOffline === true && state.checkedOnline === false) {
@@ -83,7 +91,8 @@ export default (state = initialState, action) => {
               offlineOnly.push(device)
             }
           })
-          state.arrayDevices = offlineOnly
+          // state.arrayDevices = offlineOnly
+          return {...state, arrayDevices: offlineOnly }
         }
 
         if ((state.checkedOnline === false && state.checkedOffline === false) ||
@@ -94,10 +103,11 @@ export default (state = initialState, action) => {
               state.arrayDevices[idx] = action.data
             }
           })
+          break
+
         }
 
       }
-      break
     
     case MQTT_FILTER_DEVICES_NAME:
       if (action.data) {
@@ -111,20 +121,21 @@ export default (state = initialState, action) => {
           }
         })
 
-        state.filterDevices = filterDevices
-        state.arrayDevices = filterDevices
+        // state.filterDevices = filterDevices
+        // state.arrayDevices = filterDevices
+        return {...state, filterDevices, arrayDevices: filterDevices }
       } else {
-        state.filterDevices = []
+        // state.filterDevices = []
+        return {...state, filterDevices: [] }
       }
-      break
 
     case CHECKED_ONLINE:
-      state.checkedOnline = action.data
-      break
-    
+      // state.checkedOnline = action.data
+      return {...state, checkedOnline: action.data }
+
     case CHECKED_OFFLINE:
-      state.checkedOffline = action.data
-      break
+      // state.checkedOffline = action.data
+      return {...state, checkedOffline: action.data }
 
     case DEVICES_ONLINE:
       if (state.devicesOnline[action.data.d.myName] === undefined) {
