@@ -138,10 +138,13 @@ export default (state = initialState, action) => {
       return {...state, checkedOffline: action.data }
 
     case DEVICES_ONLINE:
-      if (state.devicesOnline[action.data.d.myName] === undefined) {
-        state.devicesOnline[action.data.d.myName] = action.data
-      }
-      return {...state, devicesOnline: [action.data.d.myName] = action.data}
+      // if (state.devicesOnline[action.data.d.myName] === undefined) {
+        let devicesOnline = []
+        devicesOnline[action.data.d.myName] = action.data
+
+        return {...state, devicesOnline }
+      // }
+      // return {...state, devicesOnline: [action.data.d.myName] = action.data}
    
     case DEVICES_OFFLINE:
       if (state.devicesOffline[action.data.d.myName] === undefined) {
