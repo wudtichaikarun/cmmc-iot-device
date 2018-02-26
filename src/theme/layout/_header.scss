@@ -46,6 +46,8 @@
 
       @include respond(phone) {
         padding: .8rem 0 .8rem .8rem;
+        flex-grow: 2;
+        justify-content: space-around;
       }
     }
 
