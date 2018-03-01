@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { compose } from 'recompose'
 import { getMqttConfig } from '../selectors'
 import { createConection } from '../actions'
 import ConnectionForm from './ConnectionForm'
@@ -13,8 +12,7 @@ const CreateConnectionContainer = ({ mqtt, onConection }) => (
     onSubmit={onConection} />
 )
 
-export default compose(
-  connect(
+export default connect(
     // map state to propcs
     state => ({
       mqtt: getMqttConfig(state)
@@ -28,5 +26,4 @@ export default compose(
         props.history.push('./contents')
       }
     })
-  )
-)(CreateConnectionContainer)
+ )(CreateConnectionContainer)

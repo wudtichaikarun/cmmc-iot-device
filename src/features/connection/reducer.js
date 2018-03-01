@@ -22,7 +22,7 @@ let initialState = {
   connection: false,
   disconnect: false,
   lwt: [],
-  mqtt: {
+  configs: {
     host: 'mqtt.cmmc.io',
     port: 9001,
     clientId: 'CMMC_' + Math.random().toString(16).substr(2, 8),
@@ -47,7 +47,7 @@ export default (state = initialState, action) => {
     case MQTT_MESSAGE_ARRIVED:
       if (state.filterDevices.length === 0) {
         let d = action.data.d
-        let info = action.data.info
+        // let info = action.data.info
         let devices = state.devices
         let actionData = action.data
 
@@ -103,8 +103,7 @@ export default (state = initialState, action) => {
               state.arrayDevices[idx] = action.data
             }
           })
-          break
-
+          // break
         }
 
       }
@@ -156,7 +155,7 @@ export default (state = initialState, action) => {
       state.lwt[`id-${action.data.id}`] = action.data
       break
 
-      default:
+    default:
       return state
   }
 }

@@ -4,5 +4,5 @@ import connectReducer from 'Features/connection/reducer'
 
 export default combineReducers({
   form: formReducer,
-  mqttConfig: connectReducer
+  mqtt: connectReducer
 })

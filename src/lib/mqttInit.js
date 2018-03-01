@@ -15,20 +15,20 @@ const Store = configureStore()
 moment.locale('th')
 window.MQTTGlobal = ''
 
-export function MQTT_Connect(mqttConfig) {
+export function MQTT_Connect(initial) {
 
-  console.log("-----MQTT_connect initial value", mqttConfig)
+  console.log("-----MQTT_connect initial value", initial)
   
   let options = {
-    clientId: mqttConfig.clientId,
+    clientId: initial.clientId,
     clean: true,
-    port: parseInt(mqttConfig.port, 0)
+    port: parseInt(initial.port, 0)
   }
 
-  let client = mqtt.connect('mqtt://' + mqttConfig.host, options)
+  let client = mqtt.connect('mqtt://' + initial.host, options)
 
   client.on('connect', function () {
-    client.subscribe(mqttConfig.topic)
+    client.subscribe(initial.topic)
     client.subscribe('CMMC/+/lwt')
     window.MQTTGlobal = client
     setTimeout(() => {
