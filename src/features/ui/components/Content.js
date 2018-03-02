@@ -9,12 +9,12 @@ const Device = (data) => (
   </div>
 )
 
-const ContentContainer = (devices) => (
+const ContentContainer = ({devices}) => (
   <div>
     {
       devices.map(
         device => 
-          <Device  data={device} />
+          <Device key={device.d.myName} data={device} />
       )
     }
   </div>
@@ -22,6 +22,6 @@ const ContentContainer = (devices) => (
 
 export default connect(
  state => ({
-   devices: ['romantic1', 'romantic2']
+   devices: getDevices(state) 
  })
 )(ContentContainer)
