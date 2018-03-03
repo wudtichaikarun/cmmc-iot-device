@@ -1,17 +1,23 @@
 .contents {
-  &-home {
-    grid-column: col-start 1 / col-end 2;
-  }
+  grid-column: full-start / full-end;
 
-  &-connection{
-    grid-column: col-start 3 / col-end 6; 
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  // &-home {
+  //   grid-column: col-start 1 / col-end 2;
+  // }
 
-    @include respond(tab-port) {
-      grid-column: col-start 2 / col-end 7;
-    }
+  // &-connection{
+  //   grid-column: col-start 3 / col-end 6; 
+
+  //   @include respond(tab-port) {
+  //     grid-column: col-start 2 / col-end 7;
+  //   }
   
-    @include respond(phone) {
-      grid-column: col-start 1 / col-end 8;
-    }
-  }
+  //   @include respond(phone) {
+  //     grid-column: col-start 1 / col-end 8;
+  //   }
+  // }
 }
+
