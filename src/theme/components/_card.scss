@@ -8,7 +8,7 @@
 
 .MqttCard {
   // background-color: $color-light-grey-1;
-  font-size: 1.2rem; 
+  font-size: 1.3rem; 
 
   &__header {
   background-color: $color-light-grey-1;
@@ -20,10 +20,19 @@
 
   &__content {
     background-color: $color-light-grey-1;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
     border-bottom: 1px solid $color-light-grey-2; 
     // border-left: 1px solid $color-light-grey-2; 
     // border-right: 1px solid $color-light-grey-2; 
+    p{
+      padding: 1rem;
+      letter-spacing: 1.5px;
+
+      span {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
   }
 
   &__footer {
