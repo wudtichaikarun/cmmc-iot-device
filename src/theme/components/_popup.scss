@@ -1,0 +1,122 @@
+.popup {
+  font-size: 1.6rem;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .88);
+  z-index: 3000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  &__content {
+    div > p {
+      padding: 1rem;
+      letter-spacing: .13rem;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    @include position-center;
+    width: 55%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    display: table;
+
+    // img over flow parent  it is make we can't see boder-radis 
+    overflow: hidden;
+
+    /* Zoom in effect. Note transform can use 1 time per 1 component 
+    we used it for @include position-cente[translate(-50%, -50%)]
+    if we use it again first command will be disable you have to 
+    do it again in new command */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+    transition: all .5s .2s;
+
+    @include respond(phone) {
+      display: inline-block;
+    }
+  }
+
+  &__left {
+    width: 50%;
+    display: table-cell;
+    vertical-align: text-top;
+    padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      vertical-align: middle;
+      padding: 1rem 1rem;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      display: inherit;
+    }
+  }
+
+  &__right {
+    width: 50%;
+    display: table-cell;
+    vertical-align: text-top;;
+    padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      padding: 1rem 2.5rem;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      display: inherit;
+      text-align: center;
+    }
+  }
+
+  /* FUNCTIONARITY
+  when user click a_href'#popup' */
+   
+  //open states
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-dark-grey;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 0.7;
+
+      @include respond(phone) {
+        top: 1rem;
+        right: 1rem;
+        padding: 0 0 3px 3px;
+        color: $color-primary;
+        background-color: $color-white;
+      }
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

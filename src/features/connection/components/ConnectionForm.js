@@ -22,9 +22,9 @@ const renderField = ({
 // let btn_green = cx('btn', 'btn--green')
 
 const ConnectionForm = ({header, handleSubmit}) => (
-  <section className='contents-connection section-connectionForm'>
+  <section className='contents'>
     <div className='form-group'>
-      <div className='card'>
+      <div className='card MqttConfig'>
         <div className='card-body'>
           <form>
 

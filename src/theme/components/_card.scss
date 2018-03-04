@@ -6,6 +6,16 @@
   background-color: $color-light-grey-1;
 }
 
+.MqttConfig {
+  width: 40%;
+  @include respond(tab-port) {
+    width: 70%;
+  }
+  @include respond(phone) {
+    width: 80%;
+  }
+}
+
 .MqttCard {
   // background-color: $color-light-grey-1;
   font-size: 1.3rem; 
@@ -33,6 +43,7 @@
         text-transform: uppercase;
       }
     }
+
   }
 
   &__footer {
@@ -40,15 +51,16 @@
     padding: 1rem 1rem;
     // border: 1px solid $color-light-grey-2;  
     border-radius: 0 0 1rem 1rem;
+    text-align: right;
   }
 }
 
-.fail {
+.offline {
   background-color: $color-secondary-dark;
   color: white;
 }
 
-.success {
+.online {
   background-color: $color-primary;
   color: white; 
 }

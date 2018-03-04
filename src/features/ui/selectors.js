@@ -1,7 +1,7 @@
 export function getDevices(state) {
   const devices = [
     {
-      "classCardHeader": "success",
+      "device_status": "online",
       "info":{  
         "ssid":"ampere",
         "flash_size":4194304,
@@ -28,7 +28,7 @@ export function getDevices(state) {
         "subscription":1
       }
     },{
-      "classCardHeader": "fail",
+      "device_status": "offline",
       "info":{  
         "ssid":"Artisan Space",
         "flash_size":524288,
@@ -58,7 +58,7 @@ export function getDevices(state) {
         "subscription":1
       }
     },{
-      "classCardHeader": "success",
+      "device_status": "online",
       "info":{  
         "ssid":"ampere",
         "flash_size":4194304,
@@ -88,7 +88,7 @@ export function getDevices(state) {
         "subscription":1
      }
     },{
-      "classCardHeader": "success",
+      "device_status": "online",
       "info":{  
         "ssid":"ampere",
         "flash_size":4194304,
@@ -96,7 +96,7 @@ export function getDevices(state) {
         "chip_id":"9984e",
         "sdk":"2.0.0(656edbf)",
         "mac":"5c:cf:7f:09:98:4e",
-        "id":"628814",
+        "id":"628815",
         "client_id":"628814",
         "device_id":"9984e",
         "prefix":"CMMC/",
@@ -115,7 +115,7 @@ export function getDevices(state) {
         "subscription":1
      } 
     },{
-      "classCardHeader": "success",
+      "device_status": "offline",
       "info":{  
         "ssid":"ampere",
         "flash_size":4194304,

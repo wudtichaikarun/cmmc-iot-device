@@ -1,4 +1,8 @@
 .contents {
+
+  &-home {
+     grid-column: col-start 1 / span 2; 
+  }
   grid-column: full-start / full-end;
 
   display: grid;
