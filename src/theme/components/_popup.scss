@@ -1,5 +1,5 @@
 .popup {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -13,12 +13,18 @@
   transition: all .3s;
 
   &__content {
+    &--header {
+      font-size: 1.6rem;
+      color: $color-primary;
+    }
+
     div > p {
       padding: 1rem;
-      letter-spacing: .13rem;
+      letter-spacing: .1rem;
 
       span {
         font-weight: bold;
+        text-transform: uppercase;
       }
     }
 
@@ -43,40 +49,41 @@
     @include respond(phone) {
       display: inline-block;
     }
-  }
 
-  &__left {
-    width: 50%;
-    display: table-cell;
-    vertical-align: text-top;
-    padding: 3rem 5rem;
-
-    @include respond(tab-land) {
-      vertical-align: middle;
-      padding: 1rem 1rem;
+    &--left {
+      width: 50%;
+      display: table-cell;
+      vertical-align: text-top;
+      padding: 3rem 5rem;
+  
+      @include respond(tab-land) {
+        vertical-align: middle;
+        padding: 1rem 1rem;
+      }
+  
+      @include respond(phone) {
+        width: 100%;
+        display: inherit;
+      }
     }
 
-    @include respond(phone) {
-      width: 100%;
-      display: inherit;
+    &--right {
+      width: 50%;
+      display: table-cell;
+      vertical-align: text-top;;
+      padding: 3rem 5rem;
+  
+      @include respond(tab-port) {
+        padding: 1rem 2.5rem;
+      }
+  
+      @include respond(phone) {
+        width: 100%;
+        display: inherit;
+        text-align: center;
+      }
     }
-  }
 
-  &__right {
-    width: 50%;
-    display: table-cell;
-    vertical-align: text-top;;
-    padding: 3rem 5rem;
-
-    @include respond(tab-port) {
-      padding: 1rem 2.5rem;
-    }
-
-    @include respond(phone) {
-      width: 100%;
-      display: inherit;
-      text-align: center;
-    }
   }
 
   /* FUNCTIONARITY

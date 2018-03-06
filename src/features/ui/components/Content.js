@@ -1,41 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getDevices } from '../selectors'
+import PopupContainer from './Popup'
 
-const Popup = () => (
-  <div className="popup" id="popup">
-
-    <div className="popup__content">
-      <div className="popup__left">
-        <p> <span>ip :</span> 192.168.12.248 </p>
-        <p> <span>heap :</span> 37504 </p>
-        <p> <span>runtime :</span> LIGHT-SWITCH </p>
-        <p> <span>millis :</span> 17171540 </p>
-        <p> <span>prefix :</span> CMMC/ </p>
-        <p> <span>mac :</span> 5c:cf:7f:09:98:4e </p>
-        <p> <span>heap :</span> 37504 </p>
-        <p> <span>runtime :</span> LIGHT-SWITCH </p>
-        <p> <span>millis :</span> 17171540 </p>
-        <p> <span>prefix :</span> CMMC/ </p>
-        <p> <span>mac :</span> 5c:cf:7f:09:98:4e </p>
-      </div>
-
-      <div className="popup__right">
-        <a href="#contents" class="popup__close">&times;</a>
-        <p> <span>ip :</span> 192.168.12.248 </p>
-        <p> <span>heap :</span> 37504 </p>
-        <p> <span>runtime :</span> LIGHT-SWITCH </p>
-        <p> <span>millis :</span> 17171540 </p>
-        <p> <span>prefix :</span> CMMC/ </p>
-        <p> <span>mac :</span> 5c:cf:7f:09:98:4e </p>
-        <p> <span>heap :</span> 37504 </p>
-        <p> <span>runtime :</span> LIGHT-SWITCH </p>
-        <p> <span>millis :</span> 17171540 </p>
-      </div>
-    </div>
-
-  </div>
-)
 
 const Device = ({device}) => (
   <div className='MqttCard'>
@@ -66,7 +33,7 @@ const ContentContainer = ({devices}) => (
         )
       )
     }
-    <Popup  />
+    <PopupContainer  />
   </div>
 )          
 

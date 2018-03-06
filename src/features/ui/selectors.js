@@ -148,3 +148,7 @@ export function getDevices(state) {
   return devices
   // return state.mqtt.arrayDevices
 }
+
+export function getPopupDevice(state) {
+  return state.popup
+}
