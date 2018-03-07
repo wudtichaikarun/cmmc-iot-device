@@ -17,8 +17,6 @@ window.MQTTGlobal = ''
 
 export function MQTT_Connect(initial) {
 
-  console.log("-----MQTT_connect initial value", initial)
-  
   let options = {
     clientId: initial.clientId,
     clean: true,
@@ -31,9 +29,7 @@ export function MQTT_Connect(initial) {
     client.subscribe(initial.topic)
     client.subscribe('CMMC/+/lwt')
     window.MQTTGlobal = client
-    setTimeout(() => {
-      Store.dispatch(connectionSuccess())
-    }, 1000)
+    Store.dispatch(connectionSuccess())
  
   })
 
@@ -43,41 +39,30 @@ export function MQTT_Connect(initial) {
         let messageIncome = JSON.parse(message.toString())
   
         if ( (messageIncome.status !== undefined) && (messageIncome.info !== undefined) ) {
-          setTimeout(() => {
-            Store.dispatch(lwt(messageIncome))
-          }, 2000)
+          Store.dispatch(lwt(messageIncome))
         }
         
 
           if ( (messageIncome.d !== undefined) && (messageIncome.info !== undefined) ) {
             messageIncome.d.timestamp = moment.now()
 
-            setTimeout(() => {
-              Store.dispatch(messageArrived(messageIncome))
-            }, 4000)
+            Store.dispatch(messageArrived(messageIncome))
 
-              if (packet.retain) {
-                /*messageIncome.classCardHeader = 'card-header bg-secondary'
-                เหมือนทำอะไรซักอย่างเกี่ยวกับสี card
-                  */
-                setTimeout(() => {
-                  Store.dispatch(devicesOffline(messageIncome))
-                }, 6000)
+            if (packet.retain) {
+              /*messageIncome.classCardHeader = 'card-header bg-secondary'
+              เหมือนทำอะไรซักอย่างเกี่ยวกับสี card
+                */
+              Store.dispatch(devicesOffline(messageIncome))
 
-              } else {
-                /*messageIncome.classCardHeader = 'card-header bg-success'
-                เหมือนทำอะไรซักอย่างเกี่ยวกับสี card
-                  */
-                 setTimeout(() => {
-                  Store.dispatch(devicesOnline(message))
-                }, 6000)
-              }
-
+            } else {
+              /*messageIncome.classCardHeader = 'card-header bg-success'
+              เหมือนทำอะไรซักอย่างเกี่ยวกับสี card
+                */
+              Store.dispatch(devicesOnline(message))
+            }
 
           }
 
-        
-  
       } catch (e) {
         console.log('client on message error', e)
       }
