@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import logo from 'Theme/assets/cmmc-logo.png'
 import configIcon from 'Theme/assets/config.svg'
 import { MQTT_Disconnect } from 'Lib'
+import FilterForm from '../../filter/components/FilterForm'
 
 
 const Header = ({disconnect}) => (
@@ -57,6 +58,7 @@ const HeaderContainer = ({ onDisconnect, location: { pathname } }) => (
   <div className='header'>
       {
         (pathname==='/contents') ? <Header disconnect={onDisconnect} /> : <img src={logo} alt="" className='header-item__logo logo'/>
+        // (pathname==='/contents') ? <FilterForm /> : <img src={logo} alt="" className='header-item__logo logo'/>
       }
   </div>
 )
