@@ -6,10 +6,9 @@ import {
   connectionSuccess,
   lwt,
   messageArrived,
-  devicesOffline,
-  devicesOnline,
   mqttDisconnect
 } from '../features/connection/actions'
+import { devicesOffline, devicesOnline, } from '../features/ui/actions'
 
 const Store = configureStore()
 moment.locale('th')

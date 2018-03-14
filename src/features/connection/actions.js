@@ -3,8 +3,6 @@ import {
   MQTT_CONNECTION_SUCCESS,
   LWT,
   MQTT_MESSAGE_ARRIVED,
-  DEVICES_OFFLINE,
-  DEVICES_ONLINE,
   MQTT_DISCONNECT
 } from '../../types'
 
@@ -34,20 +32,6 @@ export function messageArrived(messageIncome) {
   return {
     type: MQTT_MESSAGE_ARRIVED,
     data: messageIncome
-  }
-}
-
-export function devicesOffline(messageIncome) {
-  return {
-    type: DEVICES_OFFLINE,
-    data: messageIncome
-  }
-}
-
-export function devicesOnline(message) {
-  return {
-    type: DEVICES_ONLINE,
-    data: JSON.parse(message.toString())
   }
 }
 
