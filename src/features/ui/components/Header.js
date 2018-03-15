@@ -9,6 +9,7 @@ import { MQTT_Disconnect } from 'Lib'
 // import FilterForm from '../../filter/components/FilterForm'
 // import { CHECKED_OFFLINE, CHECKED_ONLINE } from '../../../types';
 import { devicesOffline, devicesOnline } from '../actions'
+import { } from '../../connection/actions'
 
 
 const Header = ({
@@ -26,7 +27,7 @@ const Header = ({
 
     <div className='header-item__radio'>
       <div className="form__radio-group">
-        <input type="radio" className="form__radio-input" id="all" name="filter" onSelect={filterAll} />
+        <input type="radio" className="form__radio-input" id="all" name="filter" value='all' onSelect={filterAll} defaultChecked/>
         <label htmlFor="all" className="form__radio-label">
           <span className="form__radio-btn form__radio-btn--all"></span>
           Show all
@@ -34,7 +35,7 @@ const Header = ({
       </div>
 
       <div className="form__radio-group">
-        <input type="radio" className="form__radio-input" id="online" name="filter" onSelect={filterOnline} />
+        <input type="radio" className="form__radio-input" id="online" name="filter" value='online' onSelect={filterOnline} />
         <label htmlFor="online" className="form__radio-label">
           <span className="form__radio-btn form__radio-btn--online"></span>
           Online
@@ -42,7 +43,7 @@ const Header = ({
       </div>
 
       <div className="form__radio-group">
-        <input type="radio" className="form__radio-input" id="ofline" name="filter" onSelect={filterOfline} />
+        <input type="radio" className="form__radio-input" id="ofline" name="filter" value='ofline' onSelect={filterOfline} />
         <label htmlFor="ofline" className="form__radio-label">
           <span className="form__radio-btn form__radio-btn--ofline"></span>
           Offline
@@ -93,14 +94,17 @@ export default compose(
   connect(
     null,
     (dispatch, prop) => ({
-      filterAll(value) {
-        dispatch(devicesOnline(value))
+      searchByName(e) {
+        dispatch()
       },
-      filterOfline(value) {
-        dispatch(devicesOffline(value))
+      filterAll(e) {
+        dispatch(devicesOnline(e.target.checked))
       },
-      filterOnline(value) {
-        dispatch(devicesOnline(value))
+      filterOfline(e) {
+        dispatch(devicesOffline(e.target.checked))
+      },
+      filterOnline(e) {
+        dispatch(devicesOnline(e.target.checked))
       }
     })
   )

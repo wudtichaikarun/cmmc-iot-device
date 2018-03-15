@@ -3,17 +3,19 @@ import {
   MQTT_DISCONNECT,
   MQTT_CONNECTION_SUCCESS,
   MQTT_MESSAGE_ARRIVED,
-  MQTT_FILTER_DEVICES_NAME,
+  // MQTT_FILTER_DEVICES_NAME,
   CHECKED_ONLINE,
   CHECKED_OFFLINE,
   DEVICES_ONLINE,
   DEVICES_OFFLINE,
-  LWT
+  // LWT
 } from '../../types'
+
+import { mockRes } from '../../mockRes'
 
 let initialState = {
   devices: [],
-  arrayDevices: [],
+  arrayDevices: mockRes,
   filterDevices: [],
   devicesOnline: [],
   devicesOffline: [],
@@ -103,15 +105,16 @@ export default (state = initialState, action) => {
               state.arrayDevices[idx] = action.data
             }
           })
-          // break
+          break
         }
 
       }
     
-    case MQTT_FILTER_DEVICES_NAME:
-      if (action.data) {
-        const search = action.data
-        let filterDevices = []
+    /*case MQTT_FILTER_DEVICES_NAME:
+      if (action.deviceName) {
+        // const search = action.data
+        const deviceName = action.deviceName
+        // let filterDevices = []
 
         Object.keys(state.devices).forEach(key => {
           let matchingKey = key.indexOf(search) !== -1
@@ -126,7 +129,7 @@ export default (state = initialState, action) => {
       } else {
         // state.filterDevices = []
         return {...state, filterDevices: [] }
-      }
+      }*/
 
     case CHECKED_ONLINE:
       // state.checkedOnline = action.data
@@ -151,9 +154,9 @@ export default (state = initialState, action) => {
       }
       return {...state, devicesOffline: [action.data.d.myName] = action.data}
 
-    case LWT:
-      state.lwt[`id-${action.data.id}`] = action.data
-      break
+    // case LWT:
+    //   state.lwt[`id-${action.data.id}`] = action.data
+    //   break
 
     default:
       return state

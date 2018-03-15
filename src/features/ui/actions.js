@@ -1,19 +1,27 @@
 import {
   DEVICES_OFFLINE,
   DEVICES_ONLINE,
-  // MQTT_DISCONNECT
+  MQTT_FILTER_DEVICES_NAME
 } from '../../types'
 
-export function devicesOffline(messageIncome) {
+export function devicesOffline(data) {
   return {
     type: DEVICES_OFFLINE,
-    data: messageIncome
+    data
   }
 }
 
-export function devicesOnline(message) {
+export function devicesOnline(data) {
   return {
     type: DEVICES_ONLINE,
-    data: JSON.parse(message.toString())
+    // 
+    data
   }
 }
+
+export function searchByName(deviceName) {
+  return {
+    rype: MQTT_FILTER_DEVICES_NAME,
+    deviceName
+  }
+} 
