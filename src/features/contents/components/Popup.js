@@ -9,8 +9,8 @@ const Popup = ({ device }) => (
       <div className="popup__content--left">
         <p className='popup__content--header'><span>device data</span></p>
         {
-          Object.entries(device.d).map(([key, value]) => 
-            <p> <span>{key} :</span> {value} </p>  
+          Object.entries(device.d).map(([key, value], index) => 
+            <p key={index}> <span>{key} :</span> {value} </p>  
           )
         }
       </div>
@@ -19,8 +19,8 @@ const Popup = ({ device }) => (
         <a href="#contents" className="popup__close">&times;</a>
         <p className='popup__content--header'><span>device informations</span></p>
         {
-          Object.entries(device.info).map(([key, value]) => 
-            <p> <span>{key} :</span> {value} </p>  
+          Object.entries(device.info).map(([key, value], index) => 
+            <p key={index}> <span>{key} :</span> {value} </p>  
           )
         }
       </div>

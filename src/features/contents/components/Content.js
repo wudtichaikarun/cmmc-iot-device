@@ -29,13 +29,13 @@ const ContentContainer = ({devices}) => (
     {
       devices.map(
         device => (
-          <Device key={device.info.id} device={device} />
+          <Device key={device.info.client_id} device={device} />
         )
       )
     }
     <PopupContainer  />
   </div>
-)          
+)
 
 export default connect(
   state => ({

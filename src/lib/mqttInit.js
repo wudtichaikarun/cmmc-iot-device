@@ -4,11 +4,10 @@ import moment from "moment"
 import "moment-timezone"
 import {
   connectionSuccess,
-  lwt,
-  messageArrived,
   mqttDisconnect
 } from '../features/connection/actions'
 import { devicesOffline, devicesOnline, } from '../features/ui/actions'
+import { lwt, messageArrived } from '../features/contents/actions'
 
 const Store = configureStore()
 moment.locale('th')

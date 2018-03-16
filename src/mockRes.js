@@ -9,7 +9,7 @@ export const mockRes = [
       "sdk":"2.0.0(656edbf)",
       "mac":"5c:cf:7f:09:98:4e",
       "id":"1",
-      "client_id":"628814",
+      "client_id":"628817",
       "device_id":"9984e",
       "prefix":"CMMC/",
       "ip":"192.168.12.248",
