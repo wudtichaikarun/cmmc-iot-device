@@ -19,7 +19,6 @@ let initialState = {
 
 export default (state = initialState, action) => {
   let actions = {};
-
   actions[MQTT_CONFIG] = () => action.configs;
   actions[MQTT_CONNECTION_SUCCESS] = () => ({
     ...state,
