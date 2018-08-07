@@ -65,7 +65,6 @@ export function MQTT_Connect(initial) {
         console.log('client on message error', e)
       }
 
-
   })
 
 }
