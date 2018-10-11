@@ -17,20 +17,32 @@ let initialState = {
   topic: "CMMC/#"
 };
 
-export default (state = initialState, action) => {
+export default (
+  state = initialState,
+  action
+) => {
   let actions = {};
-  actions[MQTT_CONFIG] = () => action.configs;
-  actions[MQTT_CONNECTION_SUCCESS] = () => ({
+  actions[MQTT_CONFIG] = () =>
+    action.configs;
+  actions[
+    MQTT_CONNECTION_SUCCESS
+  ] = () => ({
     ...state,
     disconnect: "connected",
     connection: true
   });
   actions[MQTT_DISCONNECT] = () => {
     state.connection = false;
-    return { ...state, connection: false };
+    return {
+      ...state,
+      connection: false
+    };
   };
 
-  if (typeof actions[action.type] !== "function") {
+  if (
+    typeof actions[action.type] !==
+    "function"
+  ) {
     return state;
   }
 

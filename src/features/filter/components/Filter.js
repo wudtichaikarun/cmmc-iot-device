@@ -1,13 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import FilterForm from './FilterForm'
+import React from "react";
+import { connect } from "react-redux";
+import FilterForm from "./FilterForm";
 
-const FilterContainer = () => (
-  <FilterForm 
-    
-    />
-)
+const FilterContainer = () => <FilterForm />;
 
-export default connect(
-
-)(FilterContainer)
+export default connect()(FilterContainer);
