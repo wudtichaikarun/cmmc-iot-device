@@ -4,7 +4,7 @@
 
 ## Example project
 
-(cmmc)[https://wudtichaikarun.github.io/cmmc-iot-device/]
+[cmmc](https://wudtichaikarun.github.io/cmmc-iot-device/)
 
 ## Middleware
 
